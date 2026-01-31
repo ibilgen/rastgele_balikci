@@ -4,63 +4,147 @@ import React, { useState, useEffect } from 'react';
 const FISH_DB = [
   {
     id: 1,
-    name: 'Levrek',
-    img: 'levrek.jpg',
-    fact: 'Levrek, beyaz etiyle ünlüdür ve genellikle ızgarada pişirilir.',
+    name: 'Ahtapot',
+    img: 'ahtapot.png',
+    fact: 'Ahtapotlar çok zeki hayvanlardır ve üç kalpleri vardır.',
   },
   {
     id: 2,
-    name: 'Çupra',
-    img: 'cupra.jpg',
-    fact: 'Ege ve Akdeniz mutfağının vazgeçilmez balığıdır.',
+    name: 'Akya',
+    img: 'akya.png',
+    fact: 'Güçlü bir avcı olan Akya, genellikle sıcak denizlerde bulunur.',
   },
   {
     id: 3,
-    name: 'Lüfer',
-    img: 'lufer.jpg',
-    fact: "İstanbul Boğazı'nın efendisi olarak bilinir.",
+    name: 'Alabalık',
+    img: 'alabalik.png',
+    fact: 'Tatlı sularda ve soğuk nehirlerde yaşayan Alabalık, pullarındaki beneklerle tanınır.',
   },
   {
     id: 4,
-    name: 'Hamsi',
-    img: 'hamsi.jpg',
-    fact: 'Karadeniz mutfağının temel taşıdır, tavası meşhurdur.',
+    name: 'Barbun',
+    img: 'barbun.png',
+    fact: 'Pembe rengi ve lezzetli etiyle bilinen Barbun, Ege ve Akdeniz\'s popülerdir.',
   },
   {
     id: 5,
-    name: 'Uskumru',
-    img: 'uskumru.jpg',
-    fact: 'Yağlı bir balıktır ve dolması çok sevilir.',
+    name: 'Çipura',
+    img: 'cipura.png',
+    fact: 'Yanlarındaki altın sarısı şerit nedeniyle "altınbaş" olarak da bilinir.',
   },
   {
     id: 6,
-    name: 'Palamut',
-    img: 'palamut.jpg',
-    fact: 'Sonbahar aylarında en lezzetli haline ulaşır.',
+    name: 'Granyoz',
+    img: 'granyoz.png',
+    fact: 'Büyük ve yırtıcı bir balık olan Granyoz, "gölge balığı" olarak da anılır.',
   },
   {
     id: 7,
-    name: 'İstavrit',
-    img: 'istavrit.jpg',
-    fact: 'Sürüler halinde dolaşır, çıtır çıtır yenir.',
+    name: 'Hamsi',
+    img: 'hamsi.png',
+    fact: 'Karadeniz\'s simgesi olan Hamsi, sürüler halinde yaşar ve kış aylarının vazgeçilmezidir.',
   },
   {
     id: 8,
-    name: 'Kılıç Balığı',
-    img: 'kilic.jpg',
-    fact: 'Üst çenesi kılıç gibi uzundur, çok hızlı yüzer.',
+    name: 'İstavrit',
+    img: 'istavrit.png',
+    fact: 'Marmara Denizi\'sde bolca bulunan İstavrit, genellikle tavada kızartılarak tüketilir.',
   },
   {
     id: 9,
-    name: 'Sardalya',
-    img: 'sardalye.jpg',
-    fact: 'Asma yaprağında ızgarası meşhurdur.',
+    name: 'Kalamar',
+    img: 'kalamar.png',
+    fact: 'On kolu olan Kalamar, mürekkep püskürterek kendini savunur.',
   },
   {
     id: 10,
-    name: 'Alabalık',
-    img: 'alabalik.jpg',
-    fact: 'Tatlı sularda ve soğuk nehirlerde yaşar.',
+    name: 'Karides',
+    img: 'karides.png',
+    fact: 'Lezzetli bir kabuklu olan Karides, hem tatlı hem de tuzlu sularda yaşayabilir.',
+  },
+  {
+    id: 11,
+    name: 'Kerevit',
+    img: 'kerevit.png',
+    fact: 'Tatlı su ıstakozu olarak da bilinen Kerevit, temiz akarsularda yaşar.',
+  },
+  {
+    id: 12,
+    name: 'Kırmızı Karides',
+    img: 'kirmizi-karides.png',
+    fact: 'Derin ve soğuk sularda yaşayan bu karides türü, parlak kırmızı rengiyle dikkat çeker.',
+  },
+  {
+    id: 13,
+    name: 'Kolyoz',
+    img: 'kolyoz.png',
+    fact: 'Uskumruya benzeyen Kolyoz, daha küçük ve daha az yağlıdır.',
+  },
+  {
+    id: 14,
+    name: 'Kupes',
+    img: 'kupes.png',
+    fact: 'Sıcak ve ılıman denizlerin kıyı bölgelerinde yaşayan gümüş renkli bir balıktır.',
+  },
+  {
+    id: 15,
+    name: 'Levrek',
+    img: 'levrek.png',
+    fact: 'Hem acı hem tatlı suda yaşayabilen Levrek, avcı ve yırtıcı bir balıktır.',
+  },
+  {
+    id: 16,
+    name: 'Lüfer',
+    img: 'lufer.png',
+    fact: 'Boğaz\'s incisi olarak bilinen Lüfer, keskin dişleri ve lezzetli etiyle ünlüdür.',
+  },
+  {
+    id: 17,
+    name: 'Mantis Karidesi',
+    img: 'mantis-karidesi.png',
+    fact: 'Peygamberdevesine benzediği için bu adı alan Mantis Karidesi, çok güçlü pençelere sahiptir.',
+  },
+  {
+    id: 18,
+    name: 'Mezgit',
+    img: 'mezgit.png',
+    fact: 'Soğuk denizlerin dip balığı olan Mezgit, beyaz ve lezzetli etiyle bilinir.',
+  },
+  {
+    id: 19,
+    name: 'Palamut',
+    img: 'palamut.png',
+    fact: 'Sonbahar aylarında Karadeniz\'den Marmara\'ya göç eden Palamut, torik balığının küçüğüdür.',
+  },
+  {
+    id: 20,
+    name: 'Sardalya',
+    img: 'sardalya.png',
+    fact: 'Genellikle konserve olarak tüketilen Sardalya, sürü halinde gezen küçük bir balıktır.',
+  },
+  {
+    id: 21,
+    name: 'Somon',
+    img: 'somon.png',
+    fact: 'Pembe etiyle ünlü Somon, yumurtlamak için doğduğu nehirlere geri döner.',
+  },
+  {
+    id: 22,
+    name: 'Tombik',
+    img: 'tombik.png',
+    fact: 'Orkinos familyasından gelen Tombik, genellikle konserve ton balığı yapımında kullanılır.',
+  },
+  {
+    id: 23,
+    name: 'Türk Somonu',
+    img: 'turk-somonu.png',
+    fact: 'Karadeniz\'de yetiştirilen ve "Karadeniz Somonu" olarak da bilinen bir alabalık türüdür.',
+  },
+  {
+    id: 24,
+    name: 'Uskumru',
+    img: 'uskumru.png',
+    fact: 'Mavi-yeşil sırt deseniyle tanınan Uskumru, göçmen bir balıktır ve dolması meşhurdur.',
   },
 ];
 
@@ -377,9 +461,7 @@ export default function FishingGame() {
     return (
       <div className="min-h-screen bg-blue-900 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden max-w-lg w-full">
-          <div className="bg-blue-600 p-4 text-white text-center font-bold text-xl">
-            Bir Balık Yakaladın! Bu hangisi?
-          </div>
+          <div className="bg-blue-600 p-4 text-white text-center font-bold text-xl">Bir Balık Yakaladın! Bu hangisi?</div>
 
           <div className="p-6">
             <div className="w-full h-64 bg-gray-200 mb-6 rounded-lg overflow-hidden shadow-inner relative group">
@@ -451,9 +533,7 @@ export default function FishingGame() {
               </div>
             )}
             <h2
-              className={`text-3xl font-bold ${
-                isCorrect ? 'text-green-600' : 'text-red-600'
-              }`}
+              className={`text-3xl font-bold ${isCorrect ? 'text-green-600' : 'text-red-600'}`}
             >
               {isCorrect ? 'Doğru Bildin!' : 'Maalesef Yanlış.'}
             </h2>
